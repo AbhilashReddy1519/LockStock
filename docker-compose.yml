@@ -1,0 +1,22 @@
+services:
+  database-serice:
+    build:
+      context: ./postgres
+      dockerfile: Dockerfile.Postgress
+    image: ls/lockstock-db:v1
+    container_name: lockstock-db
+    restart: always
+    env_file:
+      - ./postgres/.env
+    ports:
+      - 4000:5432
+    volumes:
+      - lockstock_data:/var/lib/postgresql/data
+    networks:
+      - ls
+
+volumes:
+  lockstock_data:
+
+networks:
+  ls:
