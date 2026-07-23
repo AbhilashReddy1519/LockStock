@@ -41,12 +41,8 @@
           "name": "inventory_product_id_products_id_fk",
           "tableFrom": "inventory",
           "tableTo": "products",
-          "columnsFrom": [
-            "product_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["product_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -124,12 +120,8 @@
           "name": "order_items_order_id_orders_id_fk",
           "tableFrom": "order_items",
           "tableTo": "orders",
-          "columnsFrom": [
-            "order_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["order_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -137,12 +129,8 @@
           "name": "order_items_product_id_products_id_fk",
           "tableFrom": "order_items",
           "tableTo": "products",
-          "columnsFrom": [
-            "product_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["product_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -152,10 +140,7 @@
         "order_items_order_products_unique": {
           "name": "order_items_order_products_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "order_id",
-            "product_id"
-          ]
+          "columns": ["order_id", "product_id"]
         }
       },
       "policies": {},
@@ -219,9 +204,7 @@
         "orders_idempotency_key_unique": {
           "name": "orders_idempotency_key_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "idempotency_key"
-          ]
+          "columns": ["idempotency_key"]
         }
       },
       "policies": {},
@@ -272,10 +255,7 @@
     "public.order_status": {
       "name": "order_status",
       "schema": "public",
-      "values": [
-        "confirmed",
-        "cancelled"
-      ]
+      "values": ["confirmed", "cancelled"]
     }
   },
   "schemas": {},

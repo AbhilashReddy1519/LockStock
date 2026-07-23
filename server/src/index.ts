@@ -16,20 +16,19 @@ const server = app.listen(PORT, () => {
   `);
 });
 
-
 // Graceful Shutdown
 process.on("SIGINT", () => {
-    console.log("Stopping server...");
-    server.close(() => {
-        console.log("Server stopped.");
-        process.exit(0);
-    });
+  console.log("Stopping server...");
+  server.close(() => {
+    console.log("Server stopped.");
+    process.exit(0);
+  });
 });
 
 process.on("SIGTERM", () => {
-    console.log("Stopping server...");
-    server.close(() => {
-        console.log("Server stopped.");
-        process.exit(0);
-    });
+  console.log("Stopping server...");
+  server.close(() => {
+    console.log("Server stopped.");
+    process.exit(0);
+  });
 });

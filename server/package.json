@@ -30,7 +30,8 @@
     "db:export": "drizzle-kit export",
     "db:generate:init": "drizzle-kit generate --name=init",
     "db:generate:custom": "drizzle-kit generate --custom --name=custom",
-    "db:reset": "npm run db:generate && npm run db:migrate"
+    "db:reset": "npm run db:generate && npm run db:migrate",
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
@@ -44,6 +45,7 @@
     "@types/pg": "^8.20.0",
     "drizzle-kit": "^0.31.10",
     "nodemon": "^3.1.14",
+    "prettier": "^3.9.6",
     "ts-node": "^10.9.2",
     "typescript": "^7.0.2"
   },
