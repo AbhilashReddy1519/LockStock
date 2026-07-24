@@ -8,6 +8,13 @@
       "when": 1784486504707,
       "tag": "0000_lethal_hannibal_king",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1784869061810,
+      "tag": "0001_giant_cammi",
+      "breakpoints": true
     }
   ]
 }

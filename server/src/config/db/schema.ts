@@ -14,7 +14,7 @@ import {
 // --products
 export const products = pgTable("products", {
   id: uuid("id").defaultRandom().primaryKey(),
-  name: text("name").notNull(),
+  name: text("name").notNull().unique(),
   price: integer("price").notNull(),
   // createdAt: timestamp("createdAt").defaultNow(),
   createdAt: timestamp("createdAt").default(sql`now()`),
