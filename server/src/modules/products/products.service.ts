@@ -19,7 +19,7 @@ export const productService = {
         return product;
       });
     } catch (error: any) {
-      if (error.code === "23505") {
+      if (error.cause?.code === "23505") {
         throw new AppError(409, "Product already exists");
       }
 
