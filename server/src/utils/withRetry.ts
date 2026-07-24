@@ -5,18 +5,21 @@ export async function withRetry<T>(
   retries: number = 3
 ): Promise<T> {
   let attempts = 0;
-  while(true) {
+  while (true) {
     try {
       return await fn();
-    } catch(error) {
+    } catch (error) {
       attempts++;
 
-      if(error instanceof AppError 
-        && error.message === "Optimistic lock conflict" 
-        && attempts < retries
-      ) {
+      const err = error as { code?: string };
+      const isDeadLock = err.code === "40P01";
+      const isOptimisticConflict =
+        error instanceof AppError &&
+        error.message === "Optimistic lock conflict";
+        
+      if ((isDeadLock || isOptimisticConflict) && attempts < retries) {
         await new Promise((resolve) => {
-          setTimeout(resolve, attempts* 50)
+          setTimeout(resolve, attempts * 50);
         });
 
         continue;
